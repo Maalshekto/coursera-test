@@ -1,0 +1,20 @@
+#notice {
+	margin-top: -10px;
+	font-style: italic;
+}
+
+#invalid {
+	color: red;
+}
+
+#valid {
+	color: green;
+}
+
+input.invalid {
+	border: 5px solid red;
+}
+
+input.valid {
+	border: 5px solid green;
+}
