@@ -1,5 +1,3 @@
-<div class="loader">
-</div>
 <div class="container" >
 	<div ng-if="menu.found.length > 0" class="menu-item-tile col-md-6 " ng-repeat="item in menu.found">
 		<div class ="row menu-item">
@@ -13,7 +11,7 @@
 
 	  		</div>
 	  		<div class = "menu-item-description col-sm-7">
-	  			<button class="item-button" ng-click="menu.removeItem($index);">Remove</button>
+	  			<button class="item-button" ng-click="menu.removeItem($index);">Don't want this one!</button>
       			<h3 class="menu-item-title">{{ item.name}}</h3>
       			<p class="menu-item-details">{{ item.description}}</p>
       		</div>
