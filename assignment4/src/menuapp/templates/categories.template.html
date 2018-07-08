@@ -1,0 +1,3 @@
+<button class ="col-sm-3 col-md-2"  ng-repeat="category in $ctrl.categories.data" id="category" ui-sref="categories.items({categoryId: category.short_name})" ui-sref-active="activeTab">
+    {{ category.short_name }} : {{ category.name }}
+</button>+
