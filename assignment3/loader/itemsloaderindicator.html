@@ -4,7 +4,7 @@
 			<div class ="col-sm-5">
 				<div class = "menu-item-photo">
 					<div class="ng-binding">{{item.short_name}}</div>
-	  				<img class="img-responsive" width="250" height="150" ng-src="images/{{item.short_name}}.jpg" alt="{{item.name}}" src="images/{{item.short_name}}.jpg">
+	  				<img class="img-responsive" width="250" height="150" ng-src="images/{{item.short_name}}.jpg" alt="{{item.name}}" >
 	  			</div>
 	  			<div ng-if="item.price_small" class="menu-item-price"> ${{item.price_small}} {{item.small_portion_name}} ${{item.price_large}} {{item.large_portion_name}}</div>
 	  			<div ng-if="!item.price_small" class="menu-item-price"> ${{item.price_large}}</div>
