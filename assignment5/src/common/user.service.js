@@ -12,7 +12,6 @@ function UserService($http, ApiPath) {
   var userData = [];
 
   service.getUserData = function () {
-    console.log(userData);
     return userData;
   };
 

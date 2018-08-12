@@ -20,7 +20,6 @@ function SignUpController(UserService, $scope) {
   
   $scope.$watch($scope.short_name, function(newValue, oldValue){
 
-    console.log("Value : " + oldValue + " | " + newValue)
     if(newValue != oldValue){
       if (reg.user.short_name == "") {
         reg.badDish = false;
