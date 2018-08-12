@@ -20,6 +20,7 @@ function SignUpController(UserService) {
     		console.log(response);
     		UserService.setUserData(reg.user);
     		reg.completed = true;
+        reg.badDish = false;
     	})
     	.catch(function (error) {
     		reg.badDish = true;
