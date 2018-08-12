@@ -45,3 +45,8 @@ span.label {
     color: LightBlue;
     font-size: 16px;
 }
+
+.save {
+    color: green;
+    font-size: 20px;
+}

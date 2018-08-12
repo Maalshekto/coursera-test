@@ -1,5 +1,5 @@
 <div class='container'>
-    <fieldset ng-if="!signUpCtrl.completed">
+    <fieldset>
       <legend>Sign up to suscribe to our newsletter</legend>
       <form name='signUpForm' novalidate>
 
@@ -55,7 +55,7 @@
           <span>* indicating that field is required.</span>
       </form>
     </fieldset>
-    <div ng-if="signUpCtrl.completed">
-      Thank you for your signing up !
+    <div class="save" ng-if="signUpCtrl.completed">
+      Your information has been saved.
     </div>
 </div>  
