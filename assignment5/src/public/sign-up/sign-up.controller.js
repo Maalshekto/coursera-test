@@ -3,12 +3,17 @@
 angular.module('public')
 .controller('SignUpController', SignUpController)
 
-SignUpController.$inject = ['UserService']
-function SignUpController(UserService) {
+SignUpController.$inject = ['UserService', '$scope']
+function SignUpController(UserService, $scope) {
   var reg = this;
+  reg.user = [];
+  reg.user.short_name = "";
+
+  $scope.short_name = function() {
+      return reg.user.short_name;
+  }
 
   reg.submit = function () {
-   
   	if (reg.user.short_name == "" || !reg.user.short_name) {
   		UserService.setUserData(reg.user);
     	reg.completed = true;
@@ -17,7 +22,6 @@ function SignUpController(UserService) {
     	var promise = UserService.getFavoriteItem(reg.user.short_name);
     	promise.then(function(response) {
     		reg.user.favoriteItem = response;
-    		console.log(response);
     		UserService.setUserData(reg.user);
     		reg.completed = true;
         reg.badDish = false;
@@ -26,7 +30,31 @@ function SignUpController(UserService) {
     		reg.badDish = true;
     	});		
     }
-  	};
+  };
+  
+  $scope.$watch($scope.short_name, function(newValue, oldValue){
+
+    console.log("Value : " + oldValue + " | " + newValue)
+    if(newValue != oldValue){
+      if (reg.user.short_name == "") {
+        reg.badDish = false;
+        reg.user.favoriteItem = [];
+        return;
+      }
+
+      var promise = UserService.getFavoriteItem(newValue);
+      promise.then(function(response) {
+        reg.badDish = false;
+        reg.user.favoriteItem = response;
+      })
+      .catch(function (error) {
+        reg.badDish = true;
+      });
+    }
+  });
+
 }
+
+
 
 })();

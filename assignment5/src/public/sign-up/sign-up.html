@@ -62,9 +62,12 @@
           <span class="errorMsg" ng-if="signUpCtrl.badDish">
            No such menu number exists. 
           </span>
+          <span ng-if="!signUpCtrl.badDish && signUpCtrl.user.favoriteItem != ''">
+           {{signUpCtrl.user.favoriteItem.name}}
+          </span>
           <br>
         <button
-          ng-disabled="signUpForm.$invalid"
+          ng-disabled="signUpForm.$invalid || signUpCtrl.badDish"
           ng-click="signUpCtrl.submit()">Submit</button>
           <br/>
           <br/>
