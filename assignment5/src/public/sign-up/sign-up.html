@@ -1,0 +1,61 @@
+<div class='container'>
+    <fieldset ng-if="!signUpCtrl.completed">
+      <legend>Sign up to suscribe to our newsletter</legend>
+      <form name='signUpForm' novalidate>
+
+        <input type="text" name="firstname" placeholder="Your first name"
+          ng-model="signUpCtrl.user.firstname"
+          required>
+          <span>*</span>
+          <span class="errorMsg"
+            ng-if="signUpForm.firstname.$error.required && signUpForm.firstname.$touched">
+            First name is required !
+          </span>
+          <br>
+        <input type="text" name="lastname" placeholder="Your last name"
+          ng-model="signUpCtrl.user.lastname"
+          required>
+          <span>*</span>
+          <span class="errorMsg"
+            ng-if="signUpForm.lastname.$error.required && signUpForm.lastname.$touched">
+            Last name is required !
+          </span>
+          <br>
+
+        <input type="email" name="email" placeholder="Email"
+          ng-model="signUpCtrl.user.email"
+          required>
+          <span>*</span>
+          <span class="errorMsg" ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">
+            Must be a valid email address: handle@domain format
+          </span>
+          <br>
+
+        <input type="text" name="phone" placeholder="Phone ###-###-####"
+          ng-model="signUpCtrl.user.phone"
+          pattern="(\d{3})-(\d{3})-(\d{4})"
+          required="">
+          <span>*</span>
+          <span class="errorMsg" ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">
+            Phone must be in the format ###-###-####.
+          </span>
+          <br>
+
+          <input type="text" name="favorite dish" placeholder="Your favorite dish"
+          ng-model="signUpCtrl.user.short_name ">
+          <span class="errorMsg" ng-if="signUpCtrl.badDish">
+           No such menu number exists. 
+          </span>
+          <br>
+        <button
+          ng-disabled="signUpForm.$invalid"
+          ng-click="signUpCtrl.submit()">Submit</button>
+          <br/>
+          <br/>
+          <span>* indicating that field is required.</span>
+      </form>
+    </fieldset>
+    <div ng-if="signUpCtrl.completed">
+      Thank you for your signing up !
+    </div>
+</div>  
