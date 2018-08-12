@@ -2,7 +2,10 @@
     <fieldset>
       <legend>Sign up to suscribe to our newsletter</legend>
       <form name='signUpForm' novalidate>
-
+        <label>
+          First name :
+        </label>
+        <br>
         <input type="text" name="firstname" placeholder="Your first name"
           ng-model="signUpCtrl.user.firstname"
           required>
@@ -12,6 +15,10 @@
             First name is required !
           </span>
           <br>
+        <label>
+          Last name :
+        </label>
+        <br>
         <input type="text" name="lastname" placeholder="Your last name"
           ng-model="signUpCtrl.user.lastname"
           required>
@@ -21,7 +28,10 @@
             Last name is required !
           </span>
           <br>
-
+        <label>
+          E-mail :
+        </label>
+        <br>
         <input type="email" name="email" placeholder="Email"
           ng-model="signUpCtrl.user.email"
           required>
@@ -30,7 +40,10 @@
             Must be a valid email address: handle@domain format
           </span>
           <br>
-
+        <label>
+          Phone number :
+        </label>
+        <br>
         <input type="text" name="phone" placeholder="Phone ###-###-####"
           ng-model="signUpCtrl.user.phone"
           pattern="(\d{3})-(\d{3})-(\d{4})"
@@ -40,7 +53,10 @@
             Phone must be in the format ###-###-####.
           </span>
           <br>
-
+          <label>
+            Favorite dish :
+          </label>
+          <br>
           <input type="text" name="favorite dish" placeholder="Your favorite dish"
           ng-model="signUpCtrl.user.short_name ">
           <span class="errorMsg" ng-if="signUpCtrl.badDish">
